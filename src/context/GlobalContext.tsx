@@ -1,4 +1,5 @@
-import React, {useReducer, useState, createContext} from 'react';
+import React, {useReducer, useEffect, createContext} from 'react';
+import instance from '../api/apiConfig'
 
 const initialState = {
     drinks: []
@@ -21,7 +22,24 @@ export const GlobalProvider: React.FC = ({children}) =>{
     const [state, dispatch] = useReducer(appReducer, initialState);
 
 
-    dispatch({})
+    const getDrinks = async() =>{
+
+        try{
+            let {data} = await instance.get('/api/json/v1/1/search.php?s=')
+            console.log(data)
+            dispatch({action: 'GET_PRODUCTS', payLoad: data})
+
+        }
+        catch(e){
+            console.log(e);
+        }
+
+       
+
+    }
+
+
+   
 
     return (
         <GlobalContext.Provider 
