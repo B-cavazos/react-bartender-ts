@@ -1,0 +1,1 @@
+// global data type file
