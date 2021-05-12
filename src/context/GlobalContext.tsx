@@ -2,14 +2,15 @@ import React, {useReducer, useEffect, createContext} from 'react';
 import instance from '../api/apiConfig'
 
 const initialState = {
-    drinks: []
+    drinks: [],
+    getDrinks: () =>{}
 };
 
 const appReducer = (action:any, state:any) => {
     switch (action.type) {
         case 'GET_PRODUCTS':
           // when a case matches, the return will update the state for us
-          return { ...state, products: action.payload, is_loading: false };
+          return { ...state, drinks: action.payload};
 
 }
 
@@ -44,10 +45,12 @@ export const GlobalProvider: React.FC = ({children}) =>{
     return (
         <GlobalContext.Provider 
         value={{
-             drinks: state.drinks
+             drinks: state.drinks,
+             getDrinks
         }}
         >
             {children}
         </GlobalContext.Provider>
     )
-}
+
+    }
