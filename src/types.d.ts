@@ -55,6 +55,7 @@ type Drinks = {
 
 type InitialState = {
     drinks: Drinks[];
+    getDrinks: () => void;
 }
 
 // {
