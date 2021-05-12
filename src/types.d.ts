@@ -3,6 +3,7 @@ type Drinks = {
     idDrink: string;
     strDrink: string;
     strDrinkAlternate:string|null;
+    strDrinkThumb: string | null;
     strTags: string|null;
     strVideo: string|null;
     strCategory: string;
@@ -55,7 +56,9 @@ type Drinks = {
 
 type InitialState = {
     drinks: Drinks[];
+    drink: Drinks[];
     getDrinks: () => void;
+    getSingleDrink: (id:number) => void;
     loading: boolean;
 }
 
