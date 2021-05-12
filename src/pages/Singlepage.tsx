@@ -2,7 +2,6 @@ import {GlobalContext} from '../context/GlobalContext';
 import {useContext,useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 
-
 const SinglePage = () =>{
     const {getSingleDrink, drink} = useContext(GlobalContext);
 
