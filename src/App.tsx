@@ -1,13 +1,16 @@
 import React from 'react';
+import { BrowserRouter as Router} from 'react-router-dom';
+import AppRoutes from './routers/AppRoutes';
 import './App.css';
+import { GlobalProvider } from './context/GlobalContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        Homepage
-      </header>
-    </div>
+      <Router>
+        <GlobalProvider>
+            <AppRoutes/>
+        </GlobalProvider>
+      </Router>
   );
 }
 

@@ -14,8 +14,8 @@ type Drinks = {
     strInstructionsDE: string|null
     strInstructionsFR: null| string;
     strInstructionsIT: null| string;
-    [strInstructionsZH-HANS]: null| string;
-    [strInstructionsZH-HANT]: null| string;
+    "strInstructionsZH-HANS": null| string;
+    "strInstructionsZH-HANT": null| string;
     strIngredient1: string;
     strIngredient2: string|null;
     strIngredient3: string| null;
@@ -56,6 +56,7 @@ type Drinks = {
 type InitialState = {
     drinks: Drinks[];
     getDrinks: () => void;
+    loading: boolean;
 }
 
 // {
