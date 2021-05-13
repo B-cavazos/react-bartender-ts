@@ -3,7 +3,7 @@ type Drinks = {
     idDrink: string;
     strDrink: string;
     strDrinkAlternate:string|null;
-    strDrinkThumb: string | null;
+    strDrinkThumb: string;
     strTags: string|null;
     strVideo: string|null;
     strCategory: string;
