@@ -2,11 +2,10 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 
 interface cardProps {
-    drink: Drinks;
+    drink: Drinks
 }
 
 const HomepageCard: React.FC<cardProps> = ({ drink }) => {
-
     return(
         <div className="card">
             <div className="card-img" style={{ backgroundImage: `url(${drink.strDrinkThumb})` }}></div>
