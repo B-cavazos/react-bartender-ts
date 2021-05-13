@@ -19,7 +19,10 @@ const appReducer = (state:any, action:any) => {
             return { ...state, drinks: action.payload};
         case 'GET_PRODUCT':
           // when a case matches, the return will update the state for us
-            return { ...state, drink: action.payload};
+            return { ...state, drink: action.payload, loading: false};
+        case 'SPINNER_LOADING':
+          // when a case matches, the return will update the state for us
+            return { ...state, loading: action.payload};
         default:
             return state;
     }
@@ -30,15 +33,13 @@ export const GlobalContext = createContext<InitialState>(initialState);
 export const GlobalProvider: React.FC = ({children}) =>{
 
     const [state, dispatch] = useReducer(appReducer, initialState);
-    const [loading, setLoading] = useState(false);
+    const [localLoading, setLocalLoading] = useState(false);
 
 
     const getDrinks = async() =>{
-        // setLoading(true);
         try{
             let {data} = await instance.get('/api/json/v1/1/search.php?s=')
             console.log('the data:',data)            
-            // setLoading(false);
             dispatch({type: 'GET_PRODUCTS', payload: data.drinks})
 
 
@@ -49,11 +50,12 @@ export const GlobalProvider: React.FC = ({children}) =>{
 
     }
     const getSingleDrink = async(id:number) =>{
-        // setLoading(true);
+        setLocalLoading(true);
+
+        dispatch({type:'SPINNER_LOADING', payload:true})
         try{
             let {data} = await instance.get(`/api/json/v1/1/lookup.php?i=${id}`)
-            console.log('the data:',data)            
-            // setLoading(false);
+                    
             dispatch({type: 'GET_PRODUCT', payload: data.drinks})
 
 
@@ -74,7 +76,7 @@ export const GlobalProvider: React.FC = ({children}) =>{
              drink: state.drink,
              getDrinks,
              getSingleDrink,
-             loading
+             loading: state.loading
         }}
         >
             {children}
