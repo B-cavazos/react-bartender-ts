@@ -1,11 +1,17 @@
 import { Link } from 'react-router-dom';
+import Loader from '../components/Loader';
 import '../App.css';
 
 interface cardProps {
     drink: Drinks
+    loading: boolean;
 }
 
-const HomepageCard: React.FC<cardProps> = ({ drink }) => {
+const HomepageCard: React.FC<cardProps> = ({ drink, loading }) => {
+    if (loading) {
+        return <Loader />;
+      }
+   console.log(drink)
     return(
         <div className="card">
             <div className="card-img" style={{ backgroundImage: `url(${drink.strDrinkThumb})` }}></div>

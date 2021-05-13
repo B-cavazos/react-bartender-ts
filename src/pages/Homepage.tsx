@@ -42,7 +42,7 @@ const Homepage = () =>{
         <div className="row">
     {/* Header */}
             <div className="text-center col-12 py-3">
-                <h1>DRINKSY HOMEPAGE</h1>
+                <h1 className="logo">Drinksy</h1>
             </div>
     {/* Search Bar */}
         <form className="row">
@@ -63,7 +63,7 @@ const Homepage = () =>{
                     (filteredData.map((drink,i)=>{
                         return(
                             <div className="col-6 col-md-4 col-lg-2 mt-3" key={i}>
-                                <HomepageCard drink={drink}/>
+                                <HomepageCard drink={drink} loading={loading}/>
                             </div>   
                         )
                     }))
