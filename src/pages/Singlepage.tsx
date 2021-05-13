@@ -1,6 +1,7 @@
 import {GlobalContext} from '../context/GlobalContext';
 import {useContext,useEffect} from 'react';
 import {useParams} from 'react-router-dom';
+import SingleCardDrink from '../components/SinglePageCard';
 
 const SinglePage = () =>{
     const {getSingleDrink, drink} = useContext(GlobalContext);
@@ -11,11 +12,16 @@ const SinglePage = () =>{
             getSingleDrink(+cocktailId)
     },[cocktailId])
 
-
     console.log(drink)
 
     return (
-        <div></div>
+        <div>
+           {drink.map((drinkInfo, i) =>{
+               return (
+                <SingleCardDrink key={i} drinkInfo ={drinkInfo}/>
+               )         
+           })}
+        </div>
     )
 }
 
