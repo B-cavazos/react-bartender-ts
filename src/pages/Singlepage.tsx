@@ -4,7 +4,7 @@ import {useParams} from 'react-router-dom';
 import SingleCardDrink from '../components/SinglePageCard';
 
 const SinglePage = () =>{
-    const {getSingleDrink, drink} = useContext(GlobalContext);
+    const {getSingleDrink, drink,loading} = useContext(GlobalContext);
 
     const {cocktailId} = useParams<{cocktailId: string}>();
 
@@ -18,7 +18,7 @@ const SinglePage = () =>{
         <div>
            {drink.map((drinkInfo, i) =>{
                return (
-                <SingleCardDrink key={i} drinkInfo ={drinkInfo}/>
+                <SingleCardDrink key={i} drinkInfo ={drinkInfo} loading={loading}/>
                )         
            })}
         </div>

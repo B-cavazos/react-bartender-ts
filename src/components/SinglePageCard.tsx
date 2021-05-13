@@ -1,11 +1,20 @@
 import React from 'react';
 import '../App.css';
+import Loader from '../components/Loader';
+
+
 
 interface SingleDrink{
   drinkInfo: Drinks;
+  loading: boolean;
 }
 
-const SingleCardDrink : React.FC <SingleDrink> = ({drinkInfo}) =>{
+const SingleCardDrink : React.FC <SingleDrink> = ({drinkInfo, loading}) =>{
+
+    if (loading) {
+        return <Loader />;
+      }
+    
    console.log(drinkInfo)
     return(
         <div className="card d-flex bg-dark my-4 col w-70 justify-content-between text-center text-white">
