@@ -17,7 +17,7 @@ const SingleCardDrink : React.FC <SingleDrink> = ({drinkInfo, loading}) =>{
     
    console.log(drinkInfo)
     return(
-    <div className=" d-flex my-5 col w-50 mx-auto text-white">
+    <div className=" d-flex justify-content-center my-5 w-50 mx-auto text-white">
         <div className="card justify-content-center" style={{maxWidth:"650px"}}>
   <     div className="row no-gutters">
             <div className="col-md-5">

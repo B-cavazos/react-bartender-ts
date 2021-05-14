@@ -15,7 +15,7 @@ const SinglePage = () =>{
     console.log(drink)
 
     return (
-        <div>
+        <div className="vh">
            {drink.map((drinkInfo, i) =>{
                return (
                 <SingleCardDrink key={i} drinkInfo ={drinkInfo} loading={loading}/>

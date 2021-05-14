@@ -21,3 +21,7 @@ body{
 ul{
     list-style: none;
 }
+
+.vh{
+    height: 100vh;
+}
