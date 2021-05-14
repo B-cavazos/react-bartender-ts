@@ -18,7 +18,7 @@ const SingleCardDrink : React.FC <SingleDrink> = ({drinkInfo, loading}) =>{
    console.log(drinkInfo)
     return(
     <div className=" d-flex my-5 col w-50 mx-auto text-white">
-        <div className="card justify-content-center" style={{maxWidth:"650px"}}>
+        <div className="card fw-bold justify-content-center" style={{maxWidth:"650px"}}>
   <     div className="row no-gutters">
             <div className="col-md-5">
                 <div className="card-img" style={{ backgroundImage: `url(${drinkInfo.strDrinkThumb})`, height:'100%' }}></div>
@@ -29,7 +29,7 @@ const SingleCardDrink : React.FC <SingleDrink> = ({drinkInfo, loading}) =>{
                     <p className="card-text">Instructions : {drinkInfo.strInstructions}</p>
                 </div>
                 <div>
-                <h5 className="card-title">Ingredients</h5>
+                <h5 className="card-title">Ingredients :</h5>
                     <ul className="list-group-items">
                         <li className="list-item">{drinkInfo.strIngredient1}</li>
                         <li className="list-item">{drinkInfo.strIngredient2}</li>
