@@ -1,0 +1,23 @@
+body{
+    background: url('../images/pexels-chris-f-1283219.jpg')no-repeat center center fixed;
+    background-size:cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
+}
+
+.card-img{
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card{
+    height: auto;
+    background-image: linear-gradient(to left, rgb(253, 9, 9) , rgb(241, 241, 33));
+}
+
+ul{
+    list-style: none;
+}
