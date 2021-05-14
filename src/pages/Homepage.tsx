@@ -1,6 +1,7 @@
 import { useEffect, useContext, useState, ChangeEvent} from 'react';
 import { GlobalContext } from '../context/GlobalContext';
 import HomepageCard from '../components/HomepageCard'
+import HeaderVid from '../components/HeaderVid';
 
 const Homepage = () =>{
     
@@ -37,16 +38,16 @@ const Homepage = () =>{
         console.log('these are the drinks:', drinks)
     },[]);
 
-
     return(
         <div className="row">
     {/* Header */}
-            <div className="text-center col-12 py-3">
-                <h1 className="logo">Drinksy</h1>
+            <div className="col-12 py-3">
+                <HeaderVid/>
             </div>
     {/* Search Bar */}
-        <form className="row">
-            <div className="form-group">
+    <div className="row">
+         <form id="search-box" className="col-8 offset-2">
+            <div className="form-group d-flex align-items-end search-bar">
                 <input 
                     type="text" 
                     className="form-control"
@@ -56,19 +57,24 @@ const Homepage = () =>{
                 />
             </div>
         </form>
+        <div className="col-lg-8 offset-lg-2">
     {/* Card */}
             <div className="row">
                 {loading?
                     (<p>Data is loading...</p>):
                     (filteredData.map((drink,i)=>{
                         return(
-                            <div className="col-6 col-md-4 col-lg-2 mt-3" key={i}>
+                            <div className="col-6 col-md-4 col-lg-4 mt-3" key={i}>
                                 <HomepageCard drink={drink} loading={loading}/>
                             </div>   
                         )
                     }))
                 }
-            </div>
+            </div>            
+        </div>       
+    </div>
+
+
         </div>    
     )
 }

@@ -25,7 +25,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #2c3f92;
 }
 
 @keyframes App-logo-spin {
@@ -37,9 +37,47 @@
   }
 }
 
+.app-wrap{
+  background: rgba(22, 22, 24,.5);
+  
+}
+
+.navbar-nav{
+  width: 80vw;
+}
+
 .card-img{
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 180px;
+  height: 300px;
+}
+
+.logo{
+  font-family: 'Berkshire Swash', cursive;
+}
+
+h1{  
+  z-index: 2;
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 6rem !important;
+  color: white;
+  margin-top: 70px !important;
+}
+
+h2{
+  font-family: 'Roboto', sans-serif;
+}
+
+.sub-head{
+  color: #0074c2;
+}
+
+#search-box{
+  height: 100px;
+  margin-top: 50px;
+}
+
+button{
+  font-family: 'Roboto', sans-serif;
 }

@@ -13,10 +13,10 @@ const HomepageCard: React.FC<cardProps> = ({ drink, loading }) => {
       }
    console.log(drink)
     return(
-        <div className="card">
+        <div className="card border border-secondary">
             <div className="card-img" style={{ backgroundImage: `url(${drink.strDrinkThumb})` }}></div>
             <div className="card-body">
-                <h5 className="">{drink.strDrink}</h5>
+                <h5 className="logo sub-head" >{drink.strDrink}</h5>
                 <small className="card-subtitle mb-2 text-muted">{drink.strAlcoholic}</small>                        
                 <p className="card-text">{drink.strCategory}</p>
                 <Link to={`/cocktails/${drink.idDrink.toLowerCase()}`}>
