@@ -14,9 +14,9 @@ const appReducer = (state:any, action:any) => {
     // console.log('top of reducer', action)
     switch (action.type) {
         case 'GET_PRODUCTS':
-            console.log('in reducer', action.payload)
+            console.log('in reducer', action.payload,)
           // when a case matches, the return will update the state for us
-            return { ...state, drinks: action.payload};
+            return { ...state, drinks: action.payload, loading: false};
         case 'GET_PRODUCT':
           // when a case matches, the return will update the state for us
             return { ...state, drink: action.payload, loading: false};
@@ -31,12 +31,11 @@ const appReducer = (state:any, action:any) => {
 export const GlobalContext = createContext<InitialState>(initialState);
 
 export const GlobalProvider: React.FC = ({children}) =>{
-
     const [state, dispatch] = useReducer(appReducer, initialState);
-    const [localLoading, setLocalLoading] = useState(false);
 
 
     const getDrinks = async() =>{
+        dispatch({type:'SPINNER_LOADING', payload:true})
         try{
             let {data} = await instance.get('/api/json/v1/1/search.php?s=')
             console.log('the data:',data)            
@@ -50,7 +49,6 @@ export const GlobalProvider: React.FC = ({children}) =>{
 
     }
     const getSingleDrink = async(id:number) =>{
-        setLocalLoading(true);
 
         dispatch({type:'SPINNER_LOADING', payload:true})
         try{
