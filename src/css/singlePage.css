@@ -15,7 +15,7 @@ body{
 
 .card{
     height: auto;
-    background-image: linear-gradient(to left, rgb(253, 9, 9) , rgb(241, 241, 33));
+    /* background-image: linear-gradient(to left, rgb(253, 9, 9) , rgb(241, 241, 33)); */
 }
 
 ul{
