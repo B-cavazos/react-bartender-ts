@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import '../css/singlePage.css';
 import Loader from '../components/Loader';
 
 
@@ -17,64 +17,41 @@ const SingleCardDrink : React.FC <SingleDrink> = ({drinkInfo, loading}) =>{
     
    console.log(drinkInfo)
     return(
-        <div className="card d-flex bg-dark my-4 col w-70 justify-content-between text-center text-white">
-            <div className="card-body">
-                <img className="w-50" src={drinkInfo.strDrinkThumb} alt={drinkInfo.strDrink} />  
-            </div>   
-            <h5>Ingredients:</h5>
-            <div>
-                {drinkInfo.strIngredient1}
-            </div>                     
-            <div>
-                {drinkInfo.strIngredient2}
-            </div>                     
-            <div>
-                {drinkInfo.strIngredient3}
-            </div>                     
-            <div>
-                {drinkInfo.strIngredient4}
-            </div>                     
-            <div>
-                {drinkInfo.strIngredient5}
-            </div>                     
-            <div>
-                {drinkInfo.strIngredient6}
-            </div>                     
-            <div>
-                {drinkInfo.strIngredient7}
-            </div>                     
-            <div>
-                {drinkInfo.strIngredient8}
-            </div>                     
-            <div>
-                {drinkInfo.strIngredient9}
-            </div>                     
-            <div>
-                {drinkInfo.strIngredient10}
-            </div>                     
-            <div>
-                {drinkInfo.strIngredient11}
-            </div>                     
-            <div>
-                {drinkInfo.strIngredient12}
-            </div>                     
-            <div>
-                {drinkInfo.strIngredient13}
-            </div>                     
-            <div>
-                {drinkInfo.strIngredient14}
-            </div>                     
-            <div>
-                {drinkInfo.strIngredient15}
-            </div> 
-            <br />
-
-            
-            <div className="">
-            <h5>Instructions</h5>  
-                <p>{drinkInfo.strInstructions}</p>                    
+    <div className=" d-flex my-5 col w-50 mx-auto text-white">
+        <div className="card justify-content-center" style={{maxWidth:"650px"}}>
+  <     div className="row no-gutters">
+            <div className="col-md-5">
+                <div className="card-img" style={{ backgroundImage: `url(${drinkInfo.strDrinkThumb})`, height:'100%' }}></div>
+            </div>
+            <div className="col-md-5">
+                <div className="card-body">
+                    <h5 className="card-title">{drinkInfo.strDrink}</h5>
+                    <p className="card-text">Instructions : {drinkInfo.strInstructions}</p>
+                </div>
+                <div>
+                <h5 className="card-title">Ingredients</h5>
+                    <ul className="list-group-items">
+                        <li className="list-item">{drinkInfo.strIngredient1}</li>
+                        <li className="list-item">{drinkInfo.strIngredient2}</li>
+                        <li className="list-item">{drinkInfo.strIngredient3}</li>
+                        <li className="list-item">{drinkInfo.strIngredient4}</li>
+                        <li className="list-item">{drinkInfo.strIngredient5}</li>
+                        <li className="list-item">{drinkInfo.strIngredient6}</li>
+                        <li className="list-item">{drinkInfo.strIngredient7}</li>
+                        <li className="list-item">{drinkInfo.strIngredient8}</li>
+                        <li className="list-item">{drinkInfo.strIngredient9}</li>
+                        <li className="list-item">{drinkInfo.strIngredient10}</li>
+                        <li className="list-item">{drinkInfo.strIngredient11}</li>
+                        <li className="list-item">{drinkInfo.strIngredient12}</li>
+                        <li className="list-item">{drinkInfo.strIngredient13}</li>
+                        <li className="list-item">{drinkInfo.strIngredient14}</li>
+                        <li className="list-item">{drinkInfo.strIngredient15}</li>
+                    </ul>
+                </div>
             </div>
         </div>
+    </div>
+</div>
     )
 }
 
