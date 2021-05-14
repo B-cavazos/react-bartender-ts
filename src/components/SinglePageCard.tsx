@@ -17,9 +17,9 @@ const SingleCardDrink : React.FC <SingleDrink> = ({drinkInfo, loading}) =>{
     
    console.log(drinkInfo)
     return(
-    <div className=" d-flex my-5 col w-50 mx-auto text-white">
+    <div className=" d-flex justify-content-center my-5 w-50 mx-auto text-white">
         <div className="card fw-bold justify-content-center" style={{maxWidth:"650px"}}>
-  <     div className="row no-gutters">
+    <div className="row no-gutters">
             <div className="col-md-5">
                 <div className="card-img" style={{ backgroundImage: `url(${drinkInfo.strDrinkThumb})`, height:'100%' }}></div>
             </div>

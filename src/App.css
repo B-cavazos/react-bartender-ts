@@ -38,7 +38,7 @@
 }
 
 .app-wrap{
-  background: rgba(22, 22, 24,.5);
+  background: rgba(6, 6, 53, 0.7);
   
 }
 
@@ -50,7 +50,7 @@
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 300px;
+  height: 450px;
 }
 
 .logo{
@@ -70,7 +70,7 @@ h2{
 }
 
 .sub-head{
-  color: #0074c2;
+  color: #002169;
 }
 
 #search-box{
